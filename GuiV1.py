@@ -72,10 +72,7 @@ def add_pizza():
         f"{pizza_name} | {size} | x{quantity}"
     )
 
-
-# ==========================
 # GUI
-# ==========================
 
 window = Tk()
 window.title("Pizza Ordering System")
@@ -133,7 +130,7 @@ Checkbutton(
     window,
     text="Stuffed Crust",
     variable=stuffed_var
-).pack()
+).pack()    
 
 # Quantity
 
@@ -153,7 +150,7 @@ Button(
     window,
     text="Add Pizza",
     command=add_pizza
-).pack(pady=10)
+).pack(pady =10)
 
 # Order Display
 
