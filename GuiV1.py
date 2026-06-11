@@ -72,6 +72,7 @@ def add_pizza():
         f"{pizza_name} | {size} | x{quantity}"
     )
 
+
 # GUI
 
 window = Tk()
