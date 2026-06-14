@@ -4,6 +4,9 @@ def generate_receipt():
     if current_order is None:
         return
 
+    receipt = "===== RECEIPT =====\n"
+    receipt += f"Customer: {current_order.customer_name}\n\n"
+
     order_list.delete(0, END)
 
     order_list.insert(END, "===== RECEIPT =====")
@@ -14,13 +17,34 @@ def generate_receipt():
 
         pizza_name = pizza_menu[item.pizza_index][0]
 
+        line = f"{item.quantity} x {pizza_name} ({item.size})"
+
+        # Add to receipt text
+        receipt += line + "\n"
+
+        # Add to GUI
         order_list.insert(
             END,
-            f"{item.quantity} x {pizza_name} ({item.size})"
+            line
         )
 
-    order_list.insert(END, "")
+    total = calculate_total(current_order)
+
+    receipt += f"\nTotal: ${total}"
+
     order_list.insert(
         END,
-        f"Total: ${calculate_total(current_order)}"
+        ""
     )
+
+    order_list.insert(
+        END,
+        f"Total: ${total}"
+    )
+
+    # Save receipt to a text file
+    file = open("receipt.txt", "w")
+    file.write(receipt)
+    file.close()
+
+    print("Receipt saved!")
