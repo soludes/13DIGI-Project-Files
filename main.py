@@ -1,3 +1,4 @@
+# Made by Scott M for 13 Digi 2026
 from tkinter import *
 from tkinter import ttk
 
@@ -9,7 +10,7 @@ from recieptMakerV1 import generate_receipt
 
 current_order = None
 
-
+# Sets up the ordering process, adds name to the top of order box and adds order to the list
 def start_order():
     global current_order
 
@@ -21,7 +22,7 @@ def start_order():
         order_list.delete(0, END)
         order_list.insert(END, f"Order for {customer_name}")
 
-
+# Adds the pizza with the specifications to the order
 def add_pizza():
     global current_order
 
@@ -49,7 +50,7 @@ def add_pizza():
         f"{pizza_name} | {size} | x{quantity}"
     )
 
-
+# Generates the receipt for after you finish the order
 def make_receipt():
     if current_order is not None:
         generate_receipt(
@@ -58,7 +59,7 @@ def make_receipt():
             order_list
         )
 
-
+# Initialising the GUI
 window = Tk()
 window.title("Pizza Ordering System V2")
 window.geometry("500x500")

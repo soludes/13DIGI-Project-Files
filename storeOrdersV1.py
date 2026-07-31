@@ -1,3 +1,4 @@
+#This function stores the orders and remembers the selections
 class OrderItem:
     def __init__(self, pizza_index, size, stuffed_crust, quantity):
         self.pizza_index = pizza_index

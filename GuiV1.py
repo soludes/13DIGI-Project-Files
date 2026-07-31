@@ -1,3 +1,4 @@
+# This is the GUI opens when you run main.py
 from tkinter import *
 from tkinter import ttk
 

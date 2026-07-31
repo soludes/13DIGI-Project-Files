@@ -1,3 +1,4 @@
+# This generates the receipt and saves it to the file
 from tkinter import END
 from priceCalculationV1 import calculate_total
 
